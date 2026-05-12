@@ -15,7 +15,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Collapsible list of sections. Backed by Base UI; supports single or multi-open via openMultiple.",
+          "Collapsible list of sections. Backed by Base UI; supports single or multi-open via the `multiple` prop.",
       },
     },
   },
@@ -52,7 +52,7 @@ export const Default: Story = {
 
 export const MultipleOpen: Story = {
   render: () => (
-    <Accordion openMultiple defaultValue={["item-1", "item-2"]} className="w-96">
+    <Accordion multiple defaultValue={["item-1", "item-2"]} className="w-96">
       <AccordionItem value="item-1">
         <AccordionTrigger>Performance</AccordionTrigger>
         <AccordionContent>

@@ -23,7 +23,6 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     defaultOpen: { control: "boolean" },
-    delay: { control: "number" },
   },
   args: {
     defaultOpen: false,

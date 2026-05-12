@@ -7,9 +7,15 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 
-const meta = {
+type InputOTPArgs = {
+  maxLength: number;
+  disabled?: boolean;
+  "aria-label"?: string;
+  onChange?: (value: string) => void;
+};
+
+const meta: Meta<InputOTPArgs> = {
   title: "Primitives/InputOtp",
-  component: InputOTP,
   parameters: {
     layout: "centered",
     docs: {
@@ -31,10 +37,10 @@ const meta = {
     disabled: false,
     onChange: fn(),
   },
-} satisfies Meta<typeof InputOTP>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<InputOTPArgs>;
 
 export const Default: Story = {
   render: (args) => (

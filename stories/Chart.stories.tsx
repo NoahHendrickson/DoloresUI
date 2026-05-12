@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import type React from "react";
 import {
   Area,
   AreaChart,
@@ -50,6 +51,10 @@ const meta = {
     },
   },
   tags: ["autodocs"],
+  args: {
+    config,
+    children: null as unknown as React.ReactElement,
+  },
 } satisfies Meta<typeof ChartContainer>;
 
 export default meta;

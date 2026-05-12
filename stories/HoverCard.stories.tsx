@@ -22,8 +22,6 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     defaultOpen: { control: "boolean" },
-    openDelay: { control: "number" },
-    closeDelay: { control: "number" },
   },
   args: {
     defaultOpen: false,
@@ -67,7 +65,7 @@ export const Open: Story = {
 
 export const Interaction: Story = {
   render: () => (
-    <HoverCard openDelay={0} closeDelay={0}>
+    <HoverCard>
       <HoverCardTrigger render={<Button variant="link">@hover</Button>} />
       <HoverCardContent>
         <div className="font-medium">Preview card</div>

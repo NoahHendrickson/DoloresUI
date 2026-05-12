@@ -42,7 +42,7 @@ export const Single: Story = {
   // ToggleGroup renders aria-orientation on role=group, which axe flags (aria-allowed-attr).
   parameters: { a11y: { test: "todo" } },
   render: (args) => (
-    <ToggleGroup {...args} defaultValue="center">
+    <ToggleGroup {...args} defaultValue={["center"]}>
       <ToggleGroupItem value="left" aria-label="Align left">
         <TextAlignLeftIcon />
       </ToggleGroupItem>
@@ -61,7 +61,7 @@ export const Multiple: Story = {
   // ToggleGroup renders aria-orientation on role=group, which axe flags (aria-allowed-attr).
   parameters: { a11y: { test: "todo" } },
   render: (args) => (
-    <ToggleGroup {...args} toggleMultiple defaultValue={["bold"]}>
+    <ToggleGroup {...args} multiple defaultValue={["bold"]}>
       <ToggleGroupItem value="bold" aria-label="Bold">
         <TextBIcon weight="bold" />
       </ToggleGroupItem>
@@ -80,7 +80,7 @@ export const Outline: Story = {
   // ToggleGroup renders aria-orientation on role=group, which axe flags (aria-allowed-attr).
   parameters: { a11y: { test: "todo" } },
   render: (args) => (
-    <ToggleGroup {...args} defaultValue="left">
+    <ToggleGroup {...args} defaultValue={["left"]}>
       <ToggleGroupItem value="left" aria-label="Align left">
         <TextAlignLeftIcon />
       </ToggleGroupItem>

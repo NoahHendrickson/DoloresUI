@@ -23,12 +23,6 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-  argTypes: {
-    modal: { control: "boolean" },
-  },
-  args: {
-    modal: true,
-  },
 } satisfies Meta<typeof ContextMenu>;
 
 export default meta;
