@@ -1,8 +1,11 @@
 import type { Preview } from "@storybook/nextjs-vite";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import { IconContext } from "@phosphor-icons/react/dist/lib/context";
 import { Geist, Geist_Mono } from "next/font/google";
 import React from "react";
 import "../app/globals.css";
+
+const phosphorDefaults = { weight: "duotone" as const };
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -44,9 +47,11 @@ const preview: Preview = {
       parentSelector: "html",
     }),
     (Story) => (
-      <div className="bg-background text-foreground p-6">
-        <Story />
-      </div>
+      <IconContext.Provider value={phosphorDefaults}>
+        <div className="bg-background text-foreground p-6">
+          <Story />
+        </div>
+      </IconContext.Provider>
     ),
   ],
 };

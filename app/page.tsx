@@ -75,7 +75,7 @@ export default function Home() {
               />
             }
           >
-            <BookOpenIcon />
+            <BookOpenIcon weight="duotone" />
             shadcn docs
           </Button>
           <Button
@@ -90,7 +90,7 @@ export default function Home() {
               />
             }
           >
-            <GithubLogoIcon />
+            <GithubLogoIcon weight="duotone" />
           </Button>
           <ThemeToggle />
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
             }
           >
             Open Storybook
-            <ArrowRightIcon />
+            <ArrowRightIcon weight="duotone" />
           </Button>
           <Button
             variant="outline"
@@ -145,7 +145,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-2">
           {stack.map(({ label, icon: Icon }) => (
             <Badge key={label} variant="secondary" className="gap-1.5 py-1">
-              <Icon />
+              <Icon weight="duotone" />
               {label}
             </Badge>
           ))}
@@ -192,7 +192,7 @@ export default function Home() {
             }
           >
             CLI reference
-            <ArrowRightIcon />
+            <ArrowRightIcon weight="duotone" />
           </Button>
         </CardFooter>
       </Card>
