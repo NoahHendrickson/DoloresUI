@@ -56,10 +56,6 @@ export const Default: Story = {
       </AlertDialogContent>
     </AlertDialog>
   ),
-  parameters: {
-    // Button's destructive variant fails axe color-contrast (same as Button's Destructive story).
-    a11y: { test: "todo" },
-  },
 };
 
 export const Open: Story = {

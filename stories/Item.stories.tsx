@@ -69,8 +69,6 @@ export const Default: Story = {
 
 export const Outline: Story = {
   args: { variant: "outline" },
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: (args) => (
     <Item {...args} className="w-96">
       <ItemMedia>

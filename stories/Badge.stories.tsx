@@ -32,13 +32,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Secondary: Story = { args: { variant: "secondary", children: "Secondary" } };
-export const Destructive: Story = {
-  args: { variant: "destructive", children: "Failed" },
-  parameters: {
-    // destructive uses bg-destructive/10 + text-destructive which fails axe color-contrast in light mode.
-    a11y: { test: "todo" },
-  },
-};
+export const Destructive: Story = { args: { variant: "destructive", children: "Failed" } };
 export const Outline: Story = { args: { variant: "outline", children: "Outline" } };
 export const Ghost: Story = { args: { variant: "ghost", children: "Ghost" } };
 export const Link: Story = { args: { variant: "link", children: "Link" } };

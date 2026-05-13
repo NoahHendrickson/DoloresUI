@@ -37,8 +37,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const WithImage: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: (args) => (
     <Avatar {...args}>
       <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
@@ -48,8 +46,6 @@ export const WithImage: Story = {
 };
 
 export const Fallback: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: (args) => (
     <Avatar {...args}>
       <AvatarFallback>NJ</AvatarFallback>
@@ -58,8 +54,6 @@ export const Fallback: Story = {
 };
 
 export const Icon: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: (args) => (
     <Avatar {...args}>
       <AvatarFallback>
@@ -70,8 +64,6 @@ export const Icon: Story = {
 };
 
 export const Sizes: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: () => (
     <div className="flex items-center gap-3">
       <Avatar size="sm">
@@ -88,8 +80,6 @@ export const Sizes: Story = {
 };
 
 export const WithBadge: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: (args) => (
     <Avatar {...args}>
       <AvatarFallback>NJ</AvatarFallback>
@@ -101,8 +91,6 @@ export const WithBadge: Story = {
 };
 
 export const Group: Story = {
-  // AvatarFallback uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: () => (
     <AvatarGroup>
       <Avatar>

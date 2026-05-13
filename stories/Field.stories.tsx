@@ -109,10 +109,6 @@ export const FieldGroupStory: Story = {
 
 export const FieldSetStory: Story = {
   name: "FieldSet",
-  // FieldDescription uses text-muted-foreground inside has-data-checked containers,
-  // which axe flags for color-contrast in the nested-checked variant. Mark as 'todo'
-  // until the muted-foreground token meets WCAG AA in that context.
-  parameters: { a11y: { test: "todo" } },
   render: () => (
     <div className="w-96">
       <FieldSet>

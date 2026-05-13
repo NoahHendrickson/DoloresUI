@@ -20,14 +20,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Single: Story = {
-  // Kbd uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: () => <Kbd>Esc</Kbd>,
 };
 
 export const Combination: Story = {
-  // Kbd uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: () => (
     <KbdGroup>
       <Kbd>{"⌘"}</Kbd>
@@ -37,8 +33,6 @@ export const Combination: Story = {
 };
 
 export const InProse: Story = {
-  // Kbd uses text-muted-foreground on bg-muted which fails axe color-contrast in light mode.
-  parameters: { a11y: { test: "todo" } },
   render: () => (
     <p className="text-sm">
       Press{" "}

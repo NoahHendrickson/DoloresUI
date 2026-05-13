@@ -47,11 +47,6 @@ export const Default: Story = {
 
 export const Destructive: Story = {
   args: { variant: "destructive" },
-  parameters: {
-    // The destructive variant uses text-destructive on the card background, which axe
-    // flags for color-contrast under WCAG AA. Surface the violation without failing CI.
-    a11y: { test: "todo" },
-  },
   render: (args) => (
     <Alert {...args} className="max-w-md">
       <WarningIcon />
