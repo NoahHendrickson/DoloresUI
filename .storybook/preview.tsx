@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(
+    geistSans.variable,
+    geistMono.variable,
+    "font-sans"
+  );
+}
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -36,9 +44,7 @@ const preview: Preview = {
       parentSelector: "html",
     }),
     (Story) => (
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} font-sans bg-background text-foreground p-6`}
-      >
+      <div className="bg-background text-foreground p-6">
         <Story />
       </div>
     ),

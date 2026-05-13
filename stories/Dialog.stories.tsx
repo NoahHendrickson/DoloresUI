@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { expect, userEvent, within } from "storybook/test";
 import {
   Dialog,
+  DialogBody,
   DialogClose,
   DialogContent,
   DialogDescription,
@@ -11,6 +12,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const meta = {
   title: "Overlays/Dialog",
@@ -20,7 +23,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Modal dialog overlay backed by Base UI. Composes Trigger, Content, Header, Title, Description, and Footer.",
+          "Modal dialog overlay backed by Base UI. Composes Trigger, Content, Header, Body, Title, Description, and Footer.",
       },
     },
   },
@@ -45,11 +48,15 @@ export const Default: Story = {
       <DialogTrigger render={<Button>Open dialog</Button>} />
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Update your account details. Changes save when you click confirm.
-          </DialogDescription>
+          <DialogTitle>Dialog title</DialogTitle>
+          <DialogDescription>This is a dialog description.</DialogDescription>
         </DialogHeader>
+        <DialogBody>
+          <div className="flex w-full flex-col gap-2">
+            <Label htmlFor="dialog-default-name">Label</Label>
+            <Input id="dialog-default-name" placeholder="Placeholder" />
+          </div>
+        </DialogBody>
         <DialogFooter>
           <DialogClose render={<Button variant="outline">Cancel</Button>} />
           <Button>Save changes</Button>
@@ -59,7 +66,7 @@ export const Default: Story = {
   ),
 };
 
-export const Open: Story = {
+export const WithoutBody: Story = {
   args: { defaultOpen: true },
   render: (args) => (
     <Dialog {...args}>

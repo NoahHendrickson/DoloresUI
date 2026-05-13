@@ -4,6 +4,20 @@ import { cn } from "@/lib/utils";
 type Token = { name: string; varName: string; pair?: string };
 type Group = { title: string; description?: string; tokens: Token[] };
 
+type TypeToken = {
+  name: string;
+  className: string;
+  varName: string;
+  px: string;
+};
+
+const typeTokens: TypeToken[] = [
+  { name: "caption", className: "text-caption", varName: "--text-caption", px: "14px / 20px" },
+  { name: "body", className: "text-body", varName: "--text-body", px: "16px / 24px" },
+  { name: "lead", className: "text-lead", varName: "--text-lead", px: "18px / 28px" },
+  { name: "heading", className: "text-heading", varName: "--text-heading", px: "24px / 32px" },
+];
+
 const groups: Group[] = [
   {
     title: "Surfaces",
@@ -129,9 +143,45 @@ function Section({ group }: { group: Group }) {
   );
 }
 
+function TypeRow({ token }: { token: TypeToken }) {
+  return (
+    <div className="grid grid-cols-[10rem_1fr] items-baseline gap-4 border-b border-border py-3 last:border-b-0">
+      <div className="flex flex-col">
+        <code className="font-mono text-sm">{token.name}</code>
+        <code className="font-mono text-xs text-muted-foreground">{token.varName}</code>
+        <span className="font-mono text-xs text-muted-foreground">{token.px}</span>
+      </div>
+      <p className={cn(token.className, "text-foreground")}>
+        The quick brown fox jumps over the lazy dog
+      </p>
+    </div>
+  );
+}
+
+function TypographySection() {
+  return (
+    <section className="flex flex-col gap-3">
+      <header>
+        <h3 className="text-sm font-medium">Typography</h3>
+        <p className="text-xs text-muted-foreground">
+          Semantic font-size tokens with paired line-heights. Apply via Tailwind utilities like
+          <code className="mx-1 font-mono">text-body</code> or
+          <code className="mx-1 font-mono">text-heading</code>.
+        </p>
+      </header>
+      <div className="flex flex-col">
+        {typeTokens.map((t) => (
+          <TypeRow key={t.name} token={t} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function TokenGrid() {
   return (
     <div className="flex flex-col gap-8">
+      <TypographySection />
       {groups.map((g) => (
         <Section key={g.title} group={g} />
       ))}
@@ -140,13 +190,13 @@ function TokenGrid() {
 }
 
 const meta: Meta = {
-  title: "Foundation/Color Tokens",
+  title: "Foundation/Tokens",
   parameters: {
     layout: "fullscreen",
     docs: {
       description: {
         component:
-          "Every color CSS variable defined in `app/globals.css` under `:root` and `.dark`, mapped into Tailwind via `@theme inline`. The toolbar sun/moon switches `Light` and `Dark`; `SideBySide` shows both at once.",
+          "Color and typography tokens defined in `app/globals.css` under `@theme inline`. Colors come from `:root` and `.dark`; type sizes are semantic (`caption`, `body`, `lead`, `heading`). The toolbar sun/moon switches `Light` and `Dark`; `SideBySide` shows both at once.",
       },
     },
   },
